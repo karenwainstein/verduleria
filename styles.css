@@ -1,0 +1,522 @@
+
+
+/* Personalizar fuente*/
+@font-face {
+    font-family: Faculty Glyphic;
+    src: url(FacultyGlyphic-Regular.ttf);
+}
+@font-face {
+    font-family: Kanit;
+    src: url(Kanit-Regular.ttf);
+}
+@font-face {
+    font-family: Fira;
+    src: url(FiraSans-Regular.ttf);
+}
+@font-face {
+    font-family: Rubik;
+    src: url(Rubik-Regular.ttf);
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Aplicar la fuente personalizada */
+    margin: 0;
+    padding: 0;
+    background-color: #aafd93;
+}
+
+header {
+    font-family: Faculty Glyphic;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    font-size: 1.2rem;
+    font-family: Kanit;
+    display: flex;
+    justify-content: center;
+    background-color: #1e8302;
+}
+
+.seccion-logo {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado alrededor */
+}
+
+.logo img {
+    max-width: 100px; /* Ajustar el tamaño del logo */
+    margin-right: 20px; /* Espacio entre el logo y el título */
+}
+
+.logo h1 {
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #333; /* Color del texto */
+}
+
+
+
+nav a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.container {
+    font-size: 1.2rem;
+    font-family: Fira;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center; /* Centrar el contenido dentro del carrusel */
+}
+
+.carousel-item img {
+    width: 200px; /* Tamaño más pequeño para las imágenes */
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(73, 220, 71, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.cart {
+    position: fixed;
+    right: -300px; /* Inicialmente fuera de la vista */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #025908;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 3s ease; /* Animación de desplazamiento */
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cart.open {
+    right: 0; /* Desplazar a la vista */
+}
+
+.cart-header, .cart-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-content {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container.active {
+    display: block;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilos para la sección de productos */
+.product-list {
+    display: none; /* Ocultamos la lista de productos inicialmente */
+    margin-top: 20px;
+    max-height: 400px; /* Altura máxima para el contenedor de productos */
+    overflow-y: auto; /* Permitir el desplazamiento vertical */
+    border: 1px solid #ccc; /* Borde para el contenedor */
+    padding: 10px; /* Espaciado interno */
+    background-color: #c4ffb7; 
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.product-item img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.product-item h5 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.product-item button {
+    margin-left: 10px;
+}
+
+/* Estilos para la sección de recomendaciones */
+.recommendations {
+    font-size: 1.2rem;
+    font-family: Fira;
+    margin-top: 20px;
+    display: block; /* Aseguramos que la sección de recomendaciones esté visible */
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.recommendation-item img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.recommendation-item h5 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.recommendation-item button {
+    margin-left: 10px;
+}
+
+/* Estilos para la sección de contacto */
+.contact-section {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-section h2 {
+    margin-top: 0;
+}
+
+.contact-section label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-section button {
+    font-size: 1.2rem;
+    font-family: Rubik;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.contact-section button:hover {
+    background-color: #555;
+}
+
+/* Estilos para la alerta */
+.alert {
+    font-size: 1.5rem;
+    font-family: Rubik;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1001;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: scale(1.1); /* Aumentar tamaño al mostrar */
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: scale(0.9); /* Disminuir tamaño al ocultar */
+}
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinear a la izquierda */
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.logo img {
+    max-width: 100px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-right: 20px; /* Espacio entre el logo y el título */
+}
+
+h1 {
+    margin: 0; /* Eliminar margen del título */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+.container {
+    padding: 20px;
+    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    text-align: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.recommendations, .product-list {
+    margin-top: 20px;
+}
+
+.recommendation-item, .product-item {
+    display: inline-block;
+    width: 30%;
+    margin: 10px 1%;
+    text-align: center;
+}
+
+.recommendation-item img, .product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-section, .form-container {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+    z-index: 1002; /* Asegura que el footer esté por encima del carrito */
+}
+
+/* Estilos para la alerta */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; 
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1001;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: scale(1.1); /* Aumentar tamaño al mostrar */
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: scale(0.9); /* Disminuir tamaño al ocultar */
+}
+
+/* Estilos para el carrito */
+.cart {
+    position: fixed;
+    right: -300px; /* Inicialmente fuera de la vista */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease; /* Animación de desplazamiento */
+    overflow-y: auto;
+    z-index: 1000; /* Asegura que el carrito esté por debajo del footer */
+}
+
+.cart.open {
+    right: 0; /* Desplazar a la vista */
+}
+
+.cart.hidden {
+    right: -300px; /* Ocultar el carrito */
+}
+
+/* Estilos para el formulario de compra */
+.form-container {
+    display: none;
+    background-color: hsl(0, 0%, 42%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative; /* Asegura que se posicione correctamente */
+    z-index: 1002; /* Asegura que esté por encima de otros elementos */
+}
+
+.form-container.active {
+    display: block;
+}
+
+/* ocultar secciones */
+.hidden {
+    display: none;
+}
+.section {
+    padding: 20px;
+}
+img {
+    border-radius: 15px; /* Ajusta el valor para más o menos redondez */
+}
+button {
+    background-color: #4CAF50; /* Cambia esto al color que prefieras */
+    color: white; /* Color del texto */
+    border: none; /* Elimina bordes por defecto */
+    border-radius: 15px; /* Hace los bordes redondeados */
+    padding: 10px 20px; /* Ajusta el espacio interno del botón */
+    cursor: pointer; /* Cambia el puntero cuando pasas el mouse */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background-color 0.3s; /* Animación suave al pasar el mouse */
+}
+
+button:hover {
+    background-color: #45a049; /* Cambia el color al pasar el mouse */
+}
+@media (max-width: 768px) {
+    .recommendation-item, .product-item {
+        width: 45%; /* Ajustar el ancho en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendation-item, .product-item {
+        width: 100%; /* Ocupa todo el ancho en pantallas muy pequeñas */
+    }
+
+    nav {
+        flex-direction: column; /* Cambiar la dirección de la navegación */
+    }
+}
